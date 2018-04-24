@@ -11,7 +11,7 @@ namespace VegaApp.Controllers
     {
         public IActionResult Index()
         {
-            
+             
             return View();
         }
 
