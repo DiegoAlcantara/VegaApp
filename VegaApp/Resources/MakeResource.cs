@@ -4,18 +4,18 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace VegaApp.Entities
+namespace VegaApp.Resources
 {
-    public class Make
+    public class MakeResource
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public virtual ICollection<Model> Models { get; set; }
+        public virtual ICollection<ModelResource> Models { get; set; }
 
 
-        public Make()
+        public MakeResource()
         {
-            Models = new Collection<Model>();
+            Models = new Collection<ModelResource>();
         }
     }
 }

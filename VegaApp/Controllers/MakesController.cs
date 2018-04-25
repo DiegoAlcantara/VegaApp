@@ -4,18 +4,26 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using VegaApp.Context;
 using VegaApp.Entities;
+using Microsoft.EntityFrameworkCore;
 namespace VegaApp.Controllers
 {
     [Produces("application/json")]
     [Route("api/Makes")]
     public class MakesController : Controller
     {
+        private readonly VegaDbContext _context;
+        public MakesController(VegaDbContext context)
+        {
+            _context = context;
+        }
 
-        public IEnumerable<Make> GetMakes()
+        [HttpGet("GetMakes")]
+        public async Task<IEnumerable<Make>> GetMakes()
         {
 
-            return null;
+            return await _context.Makes.Include(m => m.Models).ToListAsync();
         }
 
     }
