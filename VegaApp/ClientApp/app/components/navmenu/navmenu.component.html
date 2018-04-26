@@ -27,6 +27,20 @@
                         <span class='glyphicon glyphicon-th-list'></span> Fetch data
                     </a>
                 </li>
+
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/vehicles/new']">
+                        <span class='glyphicon glyphicon-plus'></span> New Vehicle
+                    </a>
+                </li>
+
+
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/reverse-counter']">
+                        <span class='glyphicon glyphicon-plus'></span>Reverse
+                    </a>
+                </li>
+
             </ul>
         </div>
     </div>
